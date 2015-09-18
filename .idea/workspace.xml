@@ -32,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LiveEvent.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LiveEvent.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/LiveEvent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.583334">
-              <caret line="198" column="5" selection-start-line="198" selection-start-column="5" selection-end-line="198" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.6572935">
+              <caret line="191" column="186" selection-start-line="191" selection-start-column="186" selection-end-line="191" selection-end-column="186" />
               <folding />
             </state>
           </provider>
@@ -62,14 +62,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LiveGamesController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LiveGamesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LiveGamesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6572935">
-              <caret line="189" column="93" selection-start-line="189" selection-start-column="93" selection-end-line="189" selection-end-column="93" />
+            <state vertical-scroll-proportion="-14.333333">
+              <caret line="183" column="54" selection-start-line="183" selection-start-column="54" selection-end-line="183" selection-end-column="54" />
               <folding>
                 <element signature="e#40#62#0#PHP" expanded="true" />
-                <marker date="1442574693000" expanded="true" signature="10498:10508" placeholder="..." />
+                <marker date="1442575850000" expanded="true" signature="10467:10477" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -145,8 +145,8 @@
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/socket-client.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/app/LiveEvent.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LiveGamesController.php" />
+        <option value="$PROJECT_DIR$/app/LiveEvent.php" />
       </list>
     </option>
   </component>
@@ -567,22 +567,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/LiveEvent.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LiveGamesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.583334">
-          <caret line="198" column="5" selection-start-line="198" selection-start-column="5" selection-end-line="198" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="-14.333333">
+          <caret line="183" column="54" selection-start-line="183" selection-start-column="54" selection-end-line="183" selection-end-column="54" />
+          <folding>
+            <element signature="e#40#62#0#PHP" expanded="true" />
+            <marker date="1442575850000" expanded="true" signature="10467:10477" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LiveGamesController.php">
+    <entry file="file://$PROJECT_DIR$/app/LiveEvent.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6572935">
-          <caret line="189" column="93" selection-start-line="189" selection-start-column="93" selection-end-line="189" selection-end-column="93" />
-          <folding>
-            <element signature="e#40#62#0#PHP" expanded="true" />
-            <marker date="1442574693000" expanded="true" signature="10498:10508" placeholder="..." />
-          </folding>
+          <caret line="191" column="186" selection-start-line="191" selection-start-column="186" selection-end-line="191" selection-end-column="186" />
+          <folding />
         </state>
       </provider>
     </entry>
