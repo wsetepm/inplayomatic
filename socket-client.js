@@ -116,7 +116,7 @@ function connectSocket(ip,token){
 
 function sendToSystem(msg){
 
-    var url = "http://goalapp.com/listen/"+ encodeURIComponent(matchGoalLiveId) +"/"+ encodeURIComponent(JSON.stringify(msg));
+    var url = "http://104.236.73.160/listen/"+ encodeURIComponent(matchGoalLiveId) +"/"+ encodeURIComponent(JSON.stringify(msg));
     var res = srequest('GET', url);
 
 }
