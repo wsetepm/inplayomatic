@@ -160,7 +160,7 @@ class LiveEvent extends Model
         $event = new LiveEvent();
 
         // Get Last Goal Event Number
-        $eventNumberStartRT2 = $this->where('match_goallive_id', $fixtureId)->where('event_name', 'LIKE', '%Start RT2%')->orderBy('created_at', 'DESC')->take(1)->first();
+        $eventNumberStartRT2 = $this->where('match_goallive_id', $fixtureId)->where('event_name', 'LIKE', '%HALF TIME%')->orderBy('created_at', 'DESC')->take(1)->first();
         $eventNumberStartRT2EventNumber = (isset($eventNumberStartRT2->{'event_number'}) && $eventNumberStartRT2->{'event_number'}  >= 0) ? $eventNumberStartRT2->{'event_number'} : '9000' ;
 
         $inPlayTotalTimeSecondHalf = $this->where('match_goallive_id', $fixtureId)->where('status', 'InPlay')->where('event_number', '>', $eventNumberStartRT2EventNumber)->sum('duration');
@@ -175,7 +175,7 @@ class LiveEvent extends Model
         $event = new LiveEvent();
 
         // Get Last Goal Event Number
-        $eventNumberStartRT2 = $this->where('match_goallive_id', $fixtureId)->where('event_name', 'LIKE', '%Start RT2%')->orderBy('created_at', 'DESC')->take(1)->first();
+        $eventNumberStartRT2 = $this->where('match_goallive_id', $fixtureId)->where('event_name', 'LIKE', '%HALF TIME%')->orderBy('created_at', 'DESC')->take(1)->first();
         $eventNumberStartRT2EventNumber = (isset($eventNumberStartRT2->{'event_number'}) && $eventNumberStartRT2->{'event_number'}  >= 0) ? $eventNumberStartRT2->{'event_number'} : '9000' ;
 
         $trackedTotalTimeSecondHalf = $this->where('match_goallive_id', $fixtureId)->where('event_number', '>', $eventNumberStartRT2EventNumber)->where('status', '!=', 'HalfTime')->sum('duration');
@@ -188,7 +188,7 @@ class LiveEvent extends Model
         $event = new LiveEvent();
 
         // Get Last Goal Event Number
-        $eventNumberStartRT2 = $this->where('match_goallive_id', $fixtureId)->where('event_name', 'LIKE', '%Start RT2%')->orderBy('created_at', 'DESC')->take(1)->first();
+        $eventNumberStartRT2 = $this->where('match_goallive_id', $fixtureId)->where('event_name', 'LIKE', '%HALF TIME%')->orderBy('created_at', 'DESC')->take(1)->first();
         $eventNumberStartRT2EventNumber = (isset($eventNumberStartRT2->{'event_number'}) && $eventNumberStartRT2->{'event_number'}  >= 0) ? $eventNumberStartRT2->{'event_number'} : '9000' ;
 
         // Get Old Event Time

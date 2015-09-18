@@ -186,7 +186,7 @@ class LiveGamesController extends Controller
                 .$fixturesData[$fixtureId]['at_name']." (".$liveStats['dat2_inplay_%_sh'].") Tracked -> ".$liveStats['total_tracked_time_sh']." Minutes<br /><br />";
             }
 
-            if( $liveStats['total_inplay_time_alg'] != $liveStats['total_inplay_time'] )
+            if( $liveStats['total_inplay_time_alg'] != 1 && $liveStats['total_inplay_time_alg'] != $liveStats['total_inplay_time'] && $liveStats['dat1_inplay_%_alg'] != 1  )
             {            echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <span><span style='color:red;'>After Last Goal</span> -></strong> (".$liveStats['dat1_inplay_%_alg'].") ".$fixturesData[$fixtureId]['ht_name']." - "
                 .$fixturesData[$fixtureId]['at_name']." (".$liveStats['dat2_inplay_%_alg'].") Tracked -> ".$liveStats['total_tracked_time_alg']." Minutes<br /><br />";
             }

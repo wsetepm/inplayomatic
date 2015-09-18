@@ -558,15 +558,15 @@ class ListenerController extends Controller
         }
         if(isset($eventState))
         {
-            $myfile = fopen("/Users/Alexandre/Dropbox/Developer/Global MAMP/htdocs/inplayomatic/public/".$rballId.".txt", "w");
+            $myfile = fopen("/var/www/inplayomatic/public/".$rballId.".txt", "w");
             fwrite($myfile, $eventState);
             fclose($myfile);
             return array($eventName,$eventState,$eventStatus);
         }
         if(!isset($eventState))
         {
-            $myfile = fopen("/Users/Alexandre/Dropbox/Developer/Global MAMP/htdocs/inplayomatic/public/".$rballId.".txt", "r");
-            $fileresult = fread($myfile,filesize("/Users/Alexandre/Dropbox/Developer/Global MAMP/htdocs/inplayomatic/public/".$rballId.".txt"));
+            $myfile = fopen("/var/www/inplayomatic/public/".$rballId.".txt", "r");
+            $fileresult = fread($myfile,filesize("/var/www/inplayomatic/public/".$rballId.".txt"));
             return array($eventName, $fileresult,$eventStatus);
         }
     }
@@ -590,7 +590,7 @@ class ListenerController extends Controller
         $eventId = $jsonDecoded->{'MLU'}->{'EID'};
         $eventStartTime = $jsonDecoded->{'MLU'}->{'CPT'};
 
-        $eventTimeFile = "/Users/Alexandre/Dropbox/Developer/Global MAMP/htdocs/inplayomatic/public/".$rballId."_time.txt";
+        $eventTimeFile = "/var/www/inplayomatic/public/".$rballId."_time.txt";
         if (!file_exists($eventTimeFile)) {
             $myfile = fopen($eventTimeFile, "w");
         }
@@ -602,7 +602,7 @@ class ListenerController extends Controller
 
 
 
-        $file = '/Users/Alexandre/Dropbox/Developer/Global MAMP/htdocs/inplayomatic/public/test.txt';
+        $file = '/var/www/inplayomatic/public/test.txt';
         // Open the file to get existing content
         $current = file_get_contents($file);
         // Append a new person to the file

@@ -104,11 +104,14 @@ function connectSocket(ip,token){
     socket.on('connect',function(msg){
         console.log('connected');
     })
+var count = 0;
     socket.on('message',function(msg){
         //console.log(msg);
         console.log(msg);
-        sendToSystem(msg.ActiveMQMessage);
-    
+
+if(count > 2){
+        sendToSystem(msg.ActiveMQMessage); }
+count++;
     })
 
 

@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \App\Console\Commands\Inspire::class,
-        'App\Console\Commands\CheckLive'
+        \App\Console\Commands\CheckLive::class,
     ];
 
     /**

@@ -57,7 +57,8 @@ class CheckLive extends Command
 
 
         foreach($fixturesIds as $fixtureGsmId) {
-            $this->startSocketTrack($fixtureGsmId);
+$fixture = DB::table('live_events')->where('match_goallive_id', $fixtureGsmId)->first();
+if (!isset($fixture)) { $this->startSocketTrack($fixtureGsmId); }
         }
 
 
@@ -98,7 +99,7 @@ class CheckLive extends Command
 
     public function startSocketTrack($fixtureGsmId)
     {
-        exec('cd /Users/Alexandre/Dropbox/Developer/Global\ MAMP/htdocs/inplayomatic/');
+        exec('cd /var/www/inplayomatic/');
         exec('node socket-client.js '.$fixtureGsmId.' > /dev/null 2>/dev/null &');
     }
 }
