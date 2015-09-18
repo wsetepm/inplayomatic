@@ -181,7 +181,7 @@ class LiveGamesController extends Controller
                 .$fixturesData[$fixtureId]['ht_score']." - ".$fixturesData[$fixtureId]['at_score']."</strong> "
                 .$fixturesData[$fixtureId]['at_name']." (".$liveStats['dat2_inplay_%'].") Tracked -> ".$liveStats['total_tracked_time']." Minutes<br /><br />";
 
-            if( $liveStats['total_inplay_time_sh'] != $liveStats['total_inplay_time'] )
+            if( $liveStats['total_inplay_time_sh'] > 0 )
             {            echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <strong>On Second Half -></strong> (".$liveStats['dat1_inplay_%_sh'].") ".$fixturesData[$fixtureId]['ht_name']." - "
                 .$fixturesData[$fixtureId]['at_name']." (".$liveStats['dat2_inplay_%_sh'].") Tracked -> ".$liveStats['total_tracked_time_sh']." Minutes<br /><br />";
             }
