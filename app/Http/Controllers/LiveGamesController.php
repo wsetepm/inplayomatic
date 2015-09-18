@@ -154,20 +154,42 @@ class LiveGamesController extends Controller
             $liveStats['at2_inplay_time_alg'] = LiveEvent::getInPlayTimeAfterLastGoal($fixtureId, "AT2");
             $liveStats['dat1_inplay_time_alg'] = LiveEvent::getInPlayTimeAfterLastGoal($fixtureId, "DAT1");
             $liveStats['dat2_inplay_time_alg'] = LiveEvent::getInPlayTimeAfterLastGoal($fixtureId, "DAT2");
-            $liveStats['safe1_inplay_%_alg'] = floor(($liveStats['safe1_inplay_time_alg'] / $liveStats['total_inplay_time_alg']) * 100)."%";
-            $liveStats['safe2_inplay_%_alg'] = floor(($liveStats['safe2_inplay_time_alg'] / $liveStats['total_inplay_time_alg']) * 100)."%";
-            $liveStats['at1_inplay_%_alg'] = floor(($liveStats['at1_inplay_time_alg'] / $liveStats['total_inplay_time_alg']) * 100)."%";
-            $liveStats['at2_inplay_%_alg'] = floor(($liveStats['at2_inplay_time_alg'] / $liveStats['total_inplay_time_alg']) * 100)."%";
-            $liveStats['dat1_inplay_%_alg'] = floor(($liveStats['dat1_inplay_time_alg'] / $liveStats['total_inplay_time_alg']) * 100)."%";
-            $liveStats['dat2_inplay_%_alg'] = floor(($liveStats['dat2_inplay_time_alg'] / $liveStats['total_inplay_time_alg']) * 100)."%";
+            $liveStats['safe1_inplay_%_alg'] = ($liveStats['total_inplay_time_alg'] > 0) ? floor(($liveStats['safe1_inplay_time_alg'] / $liveStats['total_inplay_time_alg']) * 100)."%" : $noGoal = true;
+            $liveStats['safe2_inplay_%_alg'] = ($liveStats['total_inplay_time_alg'] > 0) ? floor(($liveStats['safe2_inplay_time_alg'] / $liveStats['total_inplay_time_alg']) * 100)."%" : $noGoal = true;
+            $liveStats['at1_inplay_%_alg'] = ($liveStats['total_inplay_time_alg'] > 0) ? floor(($liveStats['at1_inplay_time_alg'] / $liveStats['total_inplay_time_alg']) * 100)."%" : $noGoal = true;
+            $liveStats['at2_inplay_%_alg'] = ($liveStats['total_inplay_time_alg'] > 0) ? floor(($liveStats['at2_inplay_time_alg'] / $liveStats['total_inplay_time_alg']) * 100)."%" : $noGoal = true;
+            $liveStats['dat1_inplay_%_alg'] = ($liveStats['total_inplay_time_alg'] > 0) ? floor(($liveStats['dat1_inplay_time_alg'] / $liveStats['total_inplay_time_alg']) * 100)."%" : $noGoal = true;
+            $liveStats['dat2_inplay_%_alg'] = ($liveStats['total_inplay_time_alg'] > 0) ? floor(($liveStats['dat2_inplay_time_alg'] / $liveStats['total_inplay_time_alg']) * 100)."%" : $noGoal = true;
+
+            /* ----------------------------------------- STATS SECOND HALF ------------------------------- */
+            $liveStats['total_inplay_time_sh'] = LiveEvent::getInPlayTotalTimeSecondHalf($fixtureId);
+            $liveStats['total_tracked_time_sh'] = LiveEvent::getTrackedTotalTimeSecondHalf($fixtureId);
+            $liveStats['safe1_inplay_time_sh'] = LiveEvent::getInPlayTimeSecondHalf($fixtureId, "SAFE1");
+            $liveStats['safe2_inplay_time_sh'] = LiveEvent::getInPlayTimeSecondHalf($fixtureId, "SAFE2");
+            $liveStats['at1_inplay_time_sh'] = LiveEvent::getInPlayTimeSecondHalf($fixtureId, "AT1");
+            $liveStats['at2_inplay_time_sh'] = LiveEvent::getInPlayTimeSecondHalf($fixtureId, "AT2");
+            $liveStats['dat1_inplay_time_sh'] = LiveEvent::getInPlayTimeSecondHalf($fixtureId, "DAT1");
+            $liveStats['dat2_inplay_time_sh'] = LiveEvent::getInPlayTimeSecondHalf($fixtureId, "DAT2");
+            $liveStats['safe1_inplay_%_sh'] = ($liveStats['total_inplay_time_sh'] > 0) ? floor(($liveStats['safe1_inplay_time_sh'] / $liveStats['total_inplay_time_sh']) * 100)."%" : $noSecondHalf = true;
+            $liveStats['safe2_inplay_%_sh'] = ($liveStats['total_inplay_time_sh'] > 0) ? floor(($liveStats['safe2_inplay_time_sh'] / $liveStats['total_inplay_time_sh']) * 100)."%" : $noSecondHalf = true;
+            $liveStats['at1_inplay_%_sh'] = ($liveStats['total_inplay_time_sh'] > 0) ? floor(($liveStats['at1_inplay_time_sh'] / $liveStats['total_inplay_time_sh']) * 100)."%" : $noSecondHalf = true;
+            $liveStats['at2_inplay_%_sh'] = ($liveStats['total_inplay_time_sh'] > 0) ? floor(($liveStats['at2_inplay_time_sh'] / $liveStats['total_inplay_time_sh']) * 100)."%" : $noSecondHalf = true;
+            $liveStats['dat1_inplay_%_sh'] = ($liveStats['total_inplay_time_sh'] > 0) ? floor(($liveStats['dat1_inplay_time_sh'] / $liveStats['total_inplay_time_sh']) * 100)."%" : $noSecondHalf = true;
+            $liveStats['dat2_inplay_%_sh'] = ($liveStats['total_inplay_time_sh'] > 0) ? floor(($liveStats['dat2_inplay_time_sh'] / $liveStats['total_inplay_time_sh']) * 100)."%" : $noSecondHalf = true;
 
             echo "[ ".$fixturesData[$fixtureId]['time']." ] (".$liveStats['dat1_inplay_%'].") ".$fixturesData[$fixtureId]['ht_name']."<strong> "
                 .$fixturesData[$fixtureId]['ht_score']." - ".$fixturesData[$fixtureId]['at_score']."</strong> "
                 .$fixturesData[$fixtureId]['at_name']." (".$liveStats['dat2_inplay_%'].") Tracked -> ".$liveStats['total_tracked_time']." Minutes<br /><br />";
 
-            echo "                <strong>After Last Goal -></strong> (".$liveStats['dat1_inplay_%_alg'].") ".$fixturesData[$fixtureId]['ht_name']." - "
-                .$fixturesData[$fixtureId]['at_name']." (".$liveStats['dat2_inplay_%_alg'].") Tracked -> ".$liveStats['total_tracked_time_alg']." Minutes<br /><br />";
+            if( $liveStats['total_inplay_time_sh'] != $liveStats['total_inplay_time'] )
+            {            echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <strong>After Last Goal -></strong> (".$liveStats['dat1_inplay_%_sh'].") ".$fixturesData[$fixtureId]['ht_name']." - "
+                .$fixturesData[$fixtureId]['at_name']." (".$liveStats['dat2_inplay_%_sh'].") Tracked -> ".$liveStats['total_tracked_time_sh']." Minutes<br /><br />";
+            }
 
+            if( $liveStats['total_inplay_time_alg'] != $liveStats['total_inplay_time'] )
+            {            echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <strong>After Last Goal -></strong> (".$liveStats['dat1_inplay_%_alg'].") ".$fixturesData[$fixtureId]['ht_name']." - "
+                .$fixturesData[$fixtureId]['at_name']." (".$liveStats['dat2_inplay_%_alg'].") Tracked -> ".$liveStats['total_tracked_time_alg']." Minutes<br /><br />";
+            }
         }
     }
 
