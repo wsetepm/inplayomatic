@@ -193,7 +193,7 @@ class LiveEvent extends Model
 
         // Get Old Event Time
         $inPlayTimeSecondHalf = $this->where('match_goallive_id', $fixtureId)->where('status', 'InPlay')->where('state', $stateType)->where('event_number', '>', $eventNumberStartRT2EventNumber)->sum('duration');
-        $inPlayTimeSecondHalfSeconds = floor($inPlayTimeAfterLastGoal / 1000);
+        $inPlayTimeSecondHalfSeconds = floor($inPlayTimeSecondHalf / 1000);
         return $inPlayTimeSecondHalfSeconds;
 
     }
